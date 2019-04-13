@@ -2,6 +2,7 @@ import tweepy
 from textblob import TextBlob
 import matplotlib.pyplot as plt
 
+#function to find percentage
 def percentage(part, whole):
     return 100 * float(part)/float(whole)
 
@@ -14,11 +15,10 @@ auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 api = tweepy.API(auth)
 
-inputVal = input("""Select Option:
+inputVal = int(input("""Select Option:
 1. Keyword
 2. Hashtag
-
-Your Select: """)
+Your Selection: """))
 
 if inputVal == 1 :
     searchTerm = input("Enter search item: ")
@@ -27,6 +27,7 @@ elif inputVal == 2:
     searchTerm = "#" + Term 
 
 noOfSearchTerms = int(input("Enter number of items: "))
+
 
 public_tweets = tweepy.Cursor(api.search, q=searchTerm).items(noOfSearchTerms)
 
