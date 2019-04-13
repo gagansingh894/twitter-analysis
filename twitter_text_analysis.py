@@ -2,7 +2,6 @@ import tweepy
 from textblob import TextBlob
 import matplotlib.pyplot as plt
 
-#function to find percentage
 def percentage(part, whole):
     return 100 * float(part)/float(whole)
 
@@ -28,7 +27,6 @@ elif inputVal == 2:
     searchTerm = "#" + Term 
 
 noOfSearchTerms = int(input("Enter number of items: "))
-
 
 public_tweets = tweepy.Cursor(api.search, q=searchTerm).items(noOfSearchTerms)
 
